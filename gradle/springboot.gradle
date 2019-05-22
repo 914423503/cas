@@ -51,7 +51,7 @@ if (project.ext.forceBootifulArtifact || (!rootProject.publishReleases && !rootP
         if (Os.isFamily(Os.FAMILY_WINDOWS)) {
             dependsOn pathingJar
             doFirst {
-                classpath = files("$buildDir/classes/main", "$buildDir/resources/main", pathingJar.archivePath)
+                classpath = files("$buildDir/classes/main", "$buildDir/resources/main", "${project(":webapp").getProjectDir()}/cas-server-webapp-resources/src/main/resources/", pathingJar.archivePath)
             }
         }
 
